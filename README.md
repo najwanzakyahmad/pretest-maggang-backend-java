@@ -57,10 +57,10 @@ Dalam suatu schenario ada requirement membuat aplikasi e-commerse seperti Tokope
 Kemudian temen-temen buat design database, module (monolith/microservices) berdasarkan gambar atau schenario tersebut. Serta jelakan mengapa menggunakan design tersebut.
 
 Jawaban : 
-    - Desain ERD
+Desain ERD
     ![ERD](imgs/ERD.png)
     
-    - Desain Module
+Desain Module
     ![desain-module](imgs/diagram-arsitektur.png)
 
     - Pendekatan Arsitektur: Saya memilih pola Modular Monolith.
