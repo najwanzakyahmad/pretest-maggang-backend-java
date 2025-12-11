@@ -1,0 +1,344 @@
+{
+  "info": {
+    "_postman_id": "b9dd3d4a-1626-45d3-af09-57674184d7fe",
+    "name": "Ecommerce-springboot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "id": "84ae3663-def8-4dc1-88f4-11154c4d5cd2",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Budi Santoso\",\r\n    \"email\": \"budi@gmail.com\",\r\n    \"password\": \"rahasia12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/auth/register",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "id": "abc89bce-f9b4-4cdd-b503-03bbff5f7c67",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"budi@gmail.com\",\r\n    \"password\": \"rahasia12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/auth/login",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "c40010a6-4299-4761-8a14-30acd56ba7c9"
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Carts",
+          "id": "24233277-dbdf-42da-9f80-e7cde8f335ae",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cartItems\": [\r\n        {\r\n            \"productVariantId\": 1, \r\n            \"quantity\": 2,\r\n            \"price\": 28000000\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/carts",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "carts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Carts/my-carts",
+          "id": "d079040b-cf81-4bbc-a2b4-78e85d075253",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"MacBook Pro M3\",\r\n  \"description\": \"Laptop kencang\",\r\n  \"storeId\": 1,\r\n  \"variants\": [\r\n    {\r\n      \"name\": \"16GB - Silver\",\r\n      \"price\": 25000000,\r\n      \"stock\": 10,\r\n      \"sku\": \"MBP-SLV-16\"\r\n    }\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/carts/my-cart",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "carts",
+                "my-cart"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "91a1bfef-445b-494f-b91f-b46381dd84db"
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Orders",
+          "id": "1001ef09-a1dc-435e-8ab5-15318edbc264",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Order/Checkout",
+          "id": "a948dfdb-519f-4429-9a58-ea12c3c56086",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"userId\": 1,\r\n  \"shippingAddress\": \"Jl. Merdeka No 45, Bandung\",\r\n  \"courierName\": \"AnterAja\",\r\n  \"courierService\": \"Reguler\",\r\n  \"shippingCost\": 15000,\r\n  \"totalAmount\": 25015000,\r\n  \"items\": [\r\n    {\r\n      \"productVariantId\": 1,\r\n      \"quantity\": 1,\r\n      \"price\": 25000000\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/orders",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "d54c5951-fe81-4eb6-ac6b-9390618cabcc"
+    },
+    {
+      "name": "Catalog",
+      "item": [
+        {
+          "name": "Products",
+          "id": "fde7c94c-6c16-4971-8b25-ed2ec2b471d2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJII1NiJ9.eyJzdWIiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc2NTQxMDg2OCwiZXhwIjoxNzY1NDk3MjY4fQ.DOCiloPoiR4RDaw7dRB4WoQfysNUzOalP-FN0dUbuCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products",
+          "id": "d35d3af5-eb8f-4ab1-8615-9deca240578d",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"MacBook Pro M3\",\r\n  \"description\": \"Laptop kencang\",\r\n  \"storeId\": 1,\r\n  \"variants\": [\r\n    {\r\n      \"name\": \"16GB - Silver\",\r\n      \"price\": 25000000,\r\n      \"stock\": 10,\r\n      \"sku\": \"MBP-SLV-16\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/products",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product to store",
+          "id": "f3c56643-0835-4118-b4cb-cccf69771e38",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJII1NiJ9.eyJzdWIiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc2NTQxMDg2OCwiZXhwIjoxNzY1NDk3MjY4fQ.DOCiloPoiR4RDaw7dRB4WoQfysNUzOalP-FN0dUbuCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/products?storeId=1&categoryId=",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "storeId",
+                  "value": "1"
+                },
+                {
+                  "key": "categoryId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Stores",
+          "id": "c9edcb65-3e9d-4790-ab27-737c52a35ebc",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJII1NiJ9.eyJzdWIiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc2NTQxMDg2OCwiZXhwIjoxNzY1NDk3MjY4fQ.DOCiloPoiR4RDaw7dRB4WoQfysNUzOalP-FN0dUbuCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/stores",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "stores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "categories by store",
+          "id": "5f205ffa-7202-4581-9ffb-b2e1728a0197",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJII1NiJ9.eyJzdWIiOiJidWRpQGdtYWlsLmNvbSIsImlhdCI6MTc2NTQxMDg2OCwiZXhwIjoxNzY1NDk3MjY4fQ.DOCiloPoiR4RDaw7dRB4WoQfysNUzOalP-FN0dUbuCc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/categories/{storeId}",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "categories",
+                "{storeId}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "2df533d3-5a66-4d90-b67d-ecd0026d1664"
+    }
+  ],
+  "variable": [
+    {
+      "id": "1c6bd8be-dc0f-4441-940d-912bd209eba0",
+      "key": "url",
+      "value": ""
+    }
+  ]
+}
